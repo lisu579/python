@@ -1,0 +1,47 @@
+import os
+
+import pandas as pd
+
+'''
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+data = pd.read_csv(r'D:\STUDY\data\bamboo\bamboo_vod.csv')
+
+x, y = data
+print(x , y)
+# Big bins
+plt.hist2d(x, y, bins=(34291, 34291), cmap=plt.cm.jet)
+plt.show()
+
+# Small bins
+plt.hist2d(x, y, bins=(300, 300), cmap=plt.cm.jet)
+plt.show()
+
+# If you do not set the same values for X and Y, the bins won't be a square!
+plt.hist2d(x, y, bins=(300, 300), cmap=plt.cm.jet)
+plt.show()
+'''
+import matplotlib.pylab as plt
+import seaborn as sns
+import numpy as np
+
+my_dpi = 100
+plt.figure(figsize=(600 / my_dpi, 600 / my_dpi), dpi=my_dpi)
+
+os.chdir(r'D:\STUDY\data\bamboo')
+work_path = os.getcwd()
+file_path = os.path.join(work_path,'bamboo_vod.csv')
+data = pd.read_csv(file_path,engine = 'python')
+data.head()
+
+x = data.iloc[:, 1]
+y = data.iloc[:, 0]
+print(x,y)
+#x = np.random.normal(size=50000)
+#y = x * correlation_slope_analysis + np.random.normal(size=50000)
+plt.hist2d(x, y, bins=(50, 50), cmap=plt.cm.jet)
+plt.show()
+
+
