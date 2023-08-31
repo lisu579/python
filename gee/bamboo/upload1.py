@@ -1,7 +1,3 @@
-'''
-Created on 2020年2月6日
-@author: Sun Strong
-'''
 #coding:utf-8
 from osgeo import ogr,osr#osr用于获取坐标系统，ogr用于处理矢量文件
 import os
